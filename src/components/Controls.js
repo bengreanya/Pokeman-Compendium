@@ -1,9 +1,9 @@
 import React from 'react';
 
-export default function Controls({ types }) {
+export default function Controls({ types, handler }) {
   return (
     <div>
-      <select>
+      <select onChange={(e) => handler(e.target.value)}>
         <option value="">All</option>
         {types.map(({ type, count }) => {
           return (

@@ -20,5 +20,9 @@ export function usePokemon() {
     };
     getData();
   }, []);
-  return { pokemons, types };
+  const handleFilterSelection = async (type) => {
+    const data = await getPokemon(type);
+    setPokemons(data.results);
+  };
+  return { pokemons, types, handleFilterSelection };
 }

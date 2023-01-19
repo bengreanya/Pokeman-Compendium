@@ -4,10 +4,10 @@ import PokeCard from './PokeCard.js';
 import Controls from './Controls.js';
 
 export default function Main() {
-  const { pokemons, types } = usePokemon();
+  const { pokemons, types, handleFilterSelection } = usePokemon();
   return (
     <div>
-      <Controls types={types} />
+      <Controls types={types} handler={handleFilterSelection} />
       {pokemons.map((pokemon) => {
         return <PokeCard key={pokemon.id} pokemon={pokemon} />;
       })}
