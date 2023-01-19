@@ -5,7 +5,11 @@
   background-color: aqua;
 }
 select {
+  margin: 10px;
+  position: fixed;
   max-width: 200px;
+  height: 30px;
+  border: solid 2px rgb(146, 146, 242);
 }
 .card-container {
   display: flex;
