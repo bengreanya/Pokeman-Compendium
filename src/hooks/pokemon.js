@@ -4,6 +4,7 @@ import { getPokemon, getTypes } from '../services/getPokemon.js';
 export function usePokemon() {
   const [pokemons, setPokemons] = useState([]);
   const [types, setTypes] = useState([]);
+  // get pokemon
   useEffect(() => {
     const getData = async () => {
       const data = await getPokemon();
@@ -11,5 +12,13 @@ export function usePokemon() {
     };
     getData();
   }, []);
-  return { pokemons };
+  // get types
+  useEffect(() => {
+    const getData = async () => {
+      const data = await getTypes();
+      setTypes(data);
+    };
+    getData();
+  }, []);
+  return { pokemons, types };
 }

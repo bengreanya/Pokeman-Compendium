@@ -6,7 +6,7 @@ export default function PokeCard({ pokemon }) {
       <h2>{pokemon.pokemon}</h2>
       <img src={pokemon.url_image} />
       <p>
-        types: {pokemon.type_1},{pokemon.type_2}
+        types: {pokemon.type_1}, {pokemon.type_2}
       </p>
     </div>
   );
