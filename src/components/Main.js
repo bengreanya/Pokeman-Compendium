@@ -5,10 +5,12 @@ import PokeCard from './PokeCard.js';
 
 export default function Main() {
   const { pokemons } = usePokemon();
+  console.log('pokemons', pokemons);
   return (
     <div>
-      {/* <Controls/> */}
-      {/* <PokeCard/> */}
+      {pokemons.map((pokemon) => {
+        <PokeCard key={pokemon.id} pokemon={pokemon} />;
+      })}
     </div>
   );
 }

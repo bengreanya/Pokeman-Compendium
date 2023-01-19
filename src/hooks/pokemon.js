@@ -7,7 +7,7 @@ export function usePokemon() {
   useEffect(() => {
     const getData = async () => {
       const data = await getPokemon();
-      setPokemons(data);
+      setPokemons(data.results);
     };
     getData();
   }, []);
