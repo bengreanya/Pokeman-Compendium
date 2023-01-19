@@ -11,4 +11,5 @@ export function usePokemon() {
     };
     getData();
   }, []);
+  return { pokemons };
 }
