@@ -4,7 +4,17 @@ import PokeCard from './PokeCard.js';
 import Controls from './Controls.js';
 import './Main.css';
 export default function Main() {
-  const { pokemons, types, handleFilterSelection, loading, filter, setFilter } = usePokemon();
+  const {
+    pokemons,
+    types,
+    handleFilter,
+    handleSearch,
+    loading,
+    filter,
+    setFilter,
+    search,
+    setSearch,
+  } = usePokemon();
   if (loading) {
     return <h1>Loading</h1>;
   } else {
@@ -12,9 +22,12 @@ export default function Main() {
       <div className="main-div">
         <Controls
           types={types}
-          handler={handleFilterSelection}
+          handleFilter={handleFilter}
+          handleSearch={handleSearch}
           filter={filter}
           setFilter={setFilter}
+          search={search}
+          setSearch={setSearch}
         />
         <section className="card-container">
           {pokemons.map((pokemon) => {

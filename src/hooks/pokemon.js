@@ -6,6 +6,7 @@ export function usePokemon() {
   const [types, setTypes] = useState([]);
   const [loading, setLoading] = useState([]);
   const [filter, setFilter] = useState('');
+  const [search, setSearch] = useState('');
   // get pokemon
   useEffect(() => {
     setLoading(true);
@@ -26,11 +27,28 @@ export function usePokemon() {
     };
     getData();
   }, []);
-  const handleFilterSelection = async (type) => {
+  const handleFilter = async (type) => {
     setLoading(true);
     const data = await getPokemon(type);
     setPokemons(data.results);
     setLoading(false);
   };
-  return { pokemons, types, handleFilterSelection, loading, filter, setFilter };
+  const handleSearch = async (filterParam, searchParam) => {
+    setLoading(true);
+    const data = await getPokemon(filterParam, searchParam);
+    setPokemons(data.results);
+    setLoading(false);
+  };
+
+  return {
+    pokemons,
+    types,
+    handleFilter,
+    handleSearch,
+    loading,
+    filter,
+    setFilter,
+    search,
+    setSearch,
+  };
 }
