@@ -4,14 +4,16 @@
   align-items: center;
   background-color: aqua;
 }
-select {
+.controls {
   margin: 10px;
   position: fixed;
-  max-width: 200px;
-  height: 30px;
+}
+.controls > * {
   border: solid 2px rgb(146, 146, 242);
+  margin: 5px;
 }
 .card-container {
+  margin-top: 40px;
   display: flex;
   flex-wrap: wrap;
 }

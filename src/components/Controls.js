@@ -10,7 +10,7 @@ export default function Controls({
   setSearch,
 }) {
   return (
-    <div>
+    <div className="controls">
       <select
         defaultValue={filter}
         onChange={(e) => {
