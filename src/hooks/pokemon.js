@@ -5,6 +5,7 @@ export function usePokemon() {
   const [pokemons, setPokemons] = useState([]);
   const [types, setTypes] = useState([]);
   const [loading, setLoading] = useState([]);
+  const [filter, setFilter] = useState('');
   // get pokemon
   useEffect(() => {
     setLoading(true);
@@ -31,5 +32,5 @@ export function usePokemon() {
     setPokemons(data.results);
     setLoading(false);
   };
-  return { pokemons, types, handleFilterSelection, loading };
+  return { pokemons, types, handleFilterSelection, loading, filter, setFilter };
 }
